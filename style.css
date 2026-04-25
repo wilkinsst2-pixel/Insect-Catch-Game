@@ -1,1 +1,157 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  cursor: url('img/DiamondPick.png'), auto;
+  background: url('img/MinecraftBG.webp') no-repeat center center/cover;
+  color: #ffffff;
+  font-family: 'Press Start 2P', sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  text-align: center;
+}
+
+.btn {
+  border: 2px solid black;
+  background-color: #6e6e6e;
+  color: #ffffff;
+  padding: 15px 20px;
+  font-family: inherit;
+  cursor: url('img/DiamondPick.png'), auto;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  transition: margin 0.5s ease-out;
+  background: url('img/MinecraftBG.webp') no-repeat center center/cover;
+}
+
+.choose-insect-btn img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.5));
+}
+
+.screen.up {
+  margin-top: -100vh;
+}
+
+a {
+  color: #6e6e6e;
+}
+
+h1 {
+  line-height: 1.4;
+}
+
+/* ... */
+
+.insects-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+.insects-list li {
+  margin: 10px;
+}
+
+.choose-insect-btn {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  cursor: url('img/DiamondPick.png'), auto;
+  font-family: inherit;
+  width: 150px;
+  height: 150px;
+}
+
+.choose-insect-btn:hover {
+  background-color: #6e6e6e;
+  border: 2px solid black;
+  color: #fff;
+}
+
+.choose-insect-btn:active {
+  background-color: #454545;
+}
+.time, .score {
+  position: absolute;
+  top: 20px;
+}
+
+.time {
+  left: 20px;
+}
+
+.score {
+  right: 20px;
+}
+
+/* Temporarily update the h5 class to include a class of visible */
+/*       <h5 id="message" class="message visible"> */
+
+.message {
+  line-height: 1.7;
+  width: 100%;
+  padding: 0;
+  z-index: 100;
+  color: yellow;
+  text-align: center;
+  opacity: 0;
+  position: absolute;
+  top: 60px;
+  left: 350px;
+  transform: rotate(-20deg);
+  transition: opacity 0.4s ease-in;
+}
+
+.message.visible {
+  transform: rotate(-20deg);
+  opacity: 1;
+}
+
+/* We can now remove the visible class from h5 */
+
+/* After the closing h5, temporarily add a div with a class of insect containing an image (the fly) so we can see it to style it */
+
+.insect {
+  cursor: url('img/DiamondPick.png'), auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.insect img {
+  width: 100px;
+  height: 100px;
+}
+
+.insect.caught {
+  transform: translate(-50%, -50%) scale(0);
+}
